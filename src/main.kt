@@ -68,7 +68,47 @@ fun createUser() {
 //    }
 }
 //testbranch im base
-fun logInUser() {
+//fun logInUser() {
+//    val userName: String
+//    val password: String
+//    val logedinUser: Users
+//    printer("welcome to login prosess enter your user and password down below", "username:")
+//    userName = readLine().toString()
+//    printer("password:")
+//    password = readLine().toString()
+//    logedinUser = Users(userName = userName, passWord = password, "", "")
+//    authenticator = Authenticator()
+//    var authenticatorRes = authenticator.isRealUser(logedinUser)
+//    currentUser = logedinUser
+//    if (authenticatorRes) {
+//        printer("welcome ${currentUser.userName} you sucessfully loged in ")
+//        return
+//    } else {   printer("username or password is incorrect ")
+//        var enteredValue=""
+//        while (true){
+//            printer("if you want to go to signup page type 'X' if you want to try again type 'Y'")
+//       enteredValue= readLine().toString()
+//            if (enteredValue.equals("x")||enteredValue.equals("X")){
+//                printer("backing to signup page ....")
+//                createUser()
+//                break
+//            }else if (enteredValue.equals("y")||enteredValue.equals("Y")){
+//                printer("trying again ....")
+//
+//                logInUser()
+//                break
+//
+//            }else{
+//                printer("invalid input")
+//            }
+//
+//        }
+//
+//
+//
+//    }
+
+fun logInUser(){
     val userName: String
     val password: String
     val logedinUser: Users
@@ -76,37 +116,9 @@ fun logInUser() {
     userName = readLine().toString()
     printer("password:")
     password = readLine().toString()
-    logedinUser = Users(userName = userName, passWord = password, "", "")
+  logedinUser = Users(userName = userName, passWord = password, "", "")
     authenticator = Authenticator()
-    var authenticatorRes = authenticator.isRealUser(logedinUser)
-    currentUser = logedinUser
-    if (authenticatorRes) {
-        printer("welcome ${currentUser.userName} you sucessfully loged in ")
-        return
-    } else {   printer("username or password is incorrect ")
-        var enteredValue=""
-        while (true){
-            printer("if you want to go to signup page type 'X' if you want to try again type 'Y'")
-       enteredValue= readLine().toString()
-            if (enteredValue.equals("x")||enteredValue.equals("X")){
-                printer("backing to signup page ....")
-                createUser()
-                break
-            }else if (enteredValue.equals("y")||enteredValue.equals("Y")){
-                printer("trying again ....")
-
-                logInUser()
-                break
-
-            }else{
-                printer("invalid input")
-            }
-
-        }
-
-
-
-    }
+    authenticator.logInUser(logedinUser)
 
 
 }
